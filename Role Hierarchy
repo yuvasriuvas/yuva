@@ -1,0 +1,86 @@
+#include<iostream>
+using namespace std;
+// base class
+class CEO{
+public:
+    string root,sub1,sub2,sub3,sub4,sub5;
+    void info(){
+    cout<<"Enter Root role name:";
+    cin>>root;
+    cout<<root;
+    }
+};
+//derived class 1
+class COO:public CEO{
+public:
+    void co()
+    {
+    cout<<"\n Enter sub role name:";
+    cin>>sub1;
+    cout<<"Enter reporting to role name:";
+    cin>>root;
+    cout<<sub1;
+
+    }
+};
+//derived class 2
+class CTO:public CEO{
+public:
+    void ct()
+    {
+    cout<<"\n Enter sub role name:";
+    cin>>sub2;
+    cout<<"Enter reporting to role name:";
+    cin>>root;
+    cout<<sub2;
+    }
+};
+class SPEM:public COO{
+public:
+    void spe()
+    {
+    cout<<"\n Enter sub role name:";
+    cin>>sub3;
+    cout<<"Enter reporting to role name:";
+    cin>>sub1;
+    cout<<"SPEM";
+    }
+};
+class SPMM:public COO{
+public:
+    void spm()
+    {
+    cout<<"\n Enter sub role name:";
+    cin>>sub4;
+    cout<<"Enter reporting to role name:";
+    cin>>sub1;
+    cout<<"SPMM" ;
+    }
+};
+class DOT:public CTO{
+public:
+    void dot()
+    {
+    cout<<"\n Enter sub role name:";
+    cin>>sub5;
+    cout<<"Enter reporting to role name:";
+    cin>>sub1;
+    cout<<"DOT";
+    }
+};
+
+int main()
+{
+    COO coo1;
+    coo1.info();
+    coo1.co();
+    CTO cto1;
+    cto1.ct();
+    SPEM spem1;
+    spem1.spe();
+    SPMM spmm1;
+    spmm1.spm();
+    DOT dot1;
+    dot1.dot();
+    return 0;
+}
